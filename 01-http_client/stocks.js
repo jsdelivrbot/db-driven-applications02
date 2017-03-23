@@ -15,6 +15,6 @@ get(`http://dev.markitondemand.com/MODApis/Api/v2/InteractiveChart/json?paramete
   res.on('end', ()=>{
     let {Elements:[{DataSeries:{close:{values}}}]} = JSON.parse(data)
     let total = values.reduce((a,b)=> a+b);
-    console.log((total/365).toFixed(2));
+    console.log((total/values.length).toFixed(2));
   })
 })
