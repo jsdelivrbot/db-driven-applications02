@@ -1,0 +1,34 @@
+doctype html
+html
+  head
+    title pug demo
+    include stylesheets.pug
+    
+  body
+    h1 Happy Pugs Make Happy Rugs
+    h2= subtitle
+    //- or
+    //- h2 #{subtitle}
+    
+    //- makes a div without declaring it
+    .name
+      ul
+        each name in names 
+          li Hello, #{name}
+    - let wtf = "username"
+    
+    input(type='text', placeholder=wtf)
+    
+    block content
+      p this is here by default 
+      
+    .footer-nav
+      //- condition class using object mapping
+      a.foot-nav(class={active: loggedIn === true} href='/') Logout
+      a.foot-nav(class={active: loggedIn === false} href='/article') Login/Register
+      
+      //- if loggedIn
+      //-   a.foot-nav(class=active, href="/") Logout
+      //- else
+      //-   a.foot-nav(class=active href="/") Login/Register
+      
