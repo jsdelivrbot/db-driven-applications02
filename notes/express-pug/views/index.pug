@@ -24,6 +24,8 @@ html
       
     .footer-nav
       //- condition class using object mapping
+      a.foot-nav(class={active: loggedIn } href='/') Logout
+      a.foot-nav(class={active: loggedIn } href='/article') Login/Register
       a.foot-nav(class={active: loggedIn === true} href='/') Logout
       a.foot-nav(class={active: loggedIn === false} href='/article') Login/Register
       
